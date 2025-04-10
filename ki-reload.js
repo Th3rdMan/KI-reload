@@ -106,7 +106,13 @@
     wrapper.style.position = 'relative';
     wrapper.style.width = isPNJ ? PNJ_SIZE : AVATAR_SIZE;
     wrapper.style.height = isPNJ ? PNJ_SIZE : AVATAR_SIZE;
-    wrapper.style.borderRadius = isPNJ ? '0' : '50%';
+    if (isPNJ) {
+  wrapper.style.border = `3px solid ${color}`; // ✅ Ajoute une bordure colorée
+  wrapper.style.borderRadius = '0';
+} else {
+  wrapper.style.borderRadius = '50%';
+}
+
 
     img.style.width = isPNJ ? 'auto' : AVATAR_SIZE;
     img.style.height = isPNJ ? 'auto' : AVATAR_SIZE;
@@ -115,22 +121,24 @@
     img.style.zIndex = '2';
 
     let imgContainer;
-    if (isPNJ) {
-      imgContainer = document.createElement('div');
-      imgContainer.style.width = PNJ_SIZE;
-      imgContainer.style.height = PNJ_SIZE;
-      imgContainer.style.overflow = 'hidden';
-      imgContainer.style.display = 'flex';
-      imgContainer.style.alignItems = 'center';
-      imgContainer.style.justifyContent = 'center';
-      imgContainer.style.position = 'relative';
+if (isPNJ) {
+  wrapper.style.border = `3px solid ${color}`;
+  wrapper.style.borderRadius = '0';
 
-      img.style.position = 'absolute';
-      img.style.left = '0';
-      img.style.top = '0';
-      img.style.transform = 'translateX(12px) scale(1.25)';
-
-      imgContainer.appendChild(img);
+  imgContainer = document.createElement('div');
+  imgContainer.style.width = PNJ_SIZE;
+  imgContainer.style.height = PNJ_SIZE;
+  imgContainer.style.overflow = 'hidden';
+  imgContainer.style.display = 'flex';
+  imgContainer.style.alignItems = 'center';
+  imgContainer.style.justifyContent = 'center';
+  imgContainer.style.position = 'relative';
+  img.style.position = 'relative';
+  img.style.width = '100%';
+  img.style.height = '100%';
+  img.style.objectFit = 'cover';
+  img.style.transform = 'none';
+  imgContainer.appendChild(img);
     } else {
       img.style.borderRadius = '50%';
       img.style.position = 'relative';
@@ -205,7 +213,7 @@ if (nameCell) {
     });
     observer.observe(row);
   }
-} 
+}
 
 
 // Traitement des avatars pour les PNJs (mise en forme différente)
@@ -294,7 +302,7 @@ if (nameCell) {
     return false;
   }
 
-// Fonction principale : traite toutes les lignes du tableau pour modifier les avatars
+// Traite toutes les lignes du tableau pour modifier les avatars
   function resizeAvatars() {
     document.querySelectorAll('table .tdbc img').forEach(img => {
       const src = img.src;
@@ -346,14 +354,14 @@ if (nameCell) {
   const style = document.createElement('style');
   style.textContent = `
     .thb {
-      padding: 8px; /* Reduced padding */
-      text-align: center; /* Centered text */
-      border-radius: 15px; /* Rounded corners */
-      border-left: none !important; /* Remove left border */
-      border-right: none !important; /* Remove right border */
-      border-top: none !important; /* Remove top border */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-      transition: all 0.3s ease; /* Smooth transition for hover effects */
+      padding: 8px;
+      text-align: center;
+      border-radius: 15px;
+      border-left: none !important;
+      border-right: none !important;
+      border-top: none !important;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
     }
 
   `;
