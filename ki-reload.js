@@ -280,7 +280,6 @@ if (nameCell) {
       row.querySelector('.avatar-function')?.remove();
       insertFunctionBelowName(row, fonction, domiciliation);
     } catch (error) {
-      console.error('Fetching function from profile failed:', error);
       insertFunctionBelowName(row, 'Erreur de chargement', '', true);
     }
   }
