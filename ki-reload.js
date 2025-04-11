@@ -107,7 +107,7 @@
     wrapper.style.width = isPNJ ? PNJ_SIZE : AVATAR_SIZE;
     wrapper.style.height = isPNJ ? PNJ_SIZE : AVATAR_SIZE;
     if (isPNJ) {
-  wrapper.style.border = `3px solid ${color}`; // ✅ Ajoute une bordure colorée
+  wrapper.style.border = `3px solid ${color}`;
   wrapper.style.borderRadius = '0';
 } else {
   wrapper.style.borderRadius = '50%';
@@ -167,8 +167,7 @@ function handlePJAvatar(img, row, td) {
   const match = link?.href.match(/p1=(\d+)/);
 
   const wrapper = createAvatarWrapper(img, color, link?.href);
-  td.innerHTML = '';
-  td.appendChild(wrapper);
+  td.replaceChildren(wrapper);
   colorRow(row, color);
 
 // Vérifie si le personnage est recherché (n'importe où dans la cellule de nom)
@@ -225,8 +224,7 @@ if (nameCell) {
     const color = flagColors[flagImg?.src.split('/').pop()] || '#444';
     colorRow(row, color);
 
-    td.innerHTML = '';
-    td.appendChild(createAvatarWrapper(img, color));
+    td.replaceChildren(createAvatarWrapper(img, color));
 
     const nameCell = row.querySelectorAll('td')[1];
     if (nameCell) {
