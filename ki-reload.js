@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Kraland - Avatars personnalisés
 // @namespace    http://tampermonkey.net/
-// @version      4.3.0
+// @version      4.3.1
 // @description  Affiche les avatars améliorés des PJs avec couleurs de faction, bordures stylisées, infos profil (fonction + domiciliation) en ligne. PNJ exclus, performance optimisée. Version stable visuellement harmonieuse (v4.3.0). 🦝
 // @author       Racket Raccoon
 // @match        http://www.kraland.org/*
@@ -91,11 +91,18 @@
   }
 
 // Applique une couleur de fond (semi-transparente) à toute la ligne du PJ selon sa nationnalité
-  function colorRow(row, color) {
-    row.querySelectorAll('td').forEach(cell =>
-      cell.style.setProperty('background-color', `${color}4D`, 'important')
-    );
+function colorRow(row, color) {
+  row.querySelectorAll('td').forEach(cell => {
+    cell.style.setProperty('background-color', `${color}4D`, 'important');
+    cell.style.setProperty('background-clip', 'padding-box', 'important');
+  });
+
+  // Cible aussi directement la cellule contenant l’avatar s’il y a un lien avec l’id
+  const avatarCell = row.querySelector('td.tdbc');
+  if (avatarCell) {
+    avatarCell.style.setProperty('background-color', `${color}4D`, 'important');
   }
+}
 
 // Crée un conteneur autour de l'avatar avec style et bordure
   function createAvatarWrapper(img, color, linkHref) {
@@ -106,6 +113,8 @@
     wrapper.style.position = 'relative';
     wrapper.style.width = isPNJ ? PNJ_SIZE : AVATAR_SIZE;
     wrapper.style.height = isPNJ ? PNJ_SIZE : AVATAR_SIZE;
+    wrapper.style.backgroundColor = 'transparent';
+wrapper.style.zIndex = '1';
     if (isPNJ) {
   wrapper.style.border = `3px solid ${color}`;
   wrapper.style.borderRadius = '0';
@@ -160,15 +169,22 @@ if (isPNJ) {
 
 // Traitement des avatars pour les personnages joueurs (PJs)
 function handlePJAvatar(img, row, td) {
-  const flagImg = row?.querySelector('img[src*="/f"]');
-  const color = flagColors[flagImg?.src.split('/').pop()] || '#444';
+  const flagImg = Array.from(row.querySelectorAll('img')).find(img => {
+    const file = img.src.split('/').pop();
+    return flagColors.hasOwnProperty(file);
+  });
 
+  const color = flagImg ? flagColors[flagImg.src.split('/').pop()] : '#888';
   const link = td.querySelector('a[href*="main.php?p=6_1_0_1"]');
   const match = link?.href.match(/p1=(\d+)/);
 
   const wrapper = createAvatarWrapper(img, color, link?.href);
   td.replaceChildren(wrapper);
-  colorRow(row, color);
+
+  // ✅ Ajout fond sur la cellule AVATAR
+  td.style.setProperty('background-color', `${color}4D`, 'important');
+
+  colorRow(row, color); // garde la coloration des autres cellules
 
 // Vérifie si le personnage est recherché (n'importe où dans la cellule de nom)
 const nameCell = row.querySelectorAll('td')[1];
@@ -220,7 +236,10 @@ if (nameCell) {
     const td = img.closest('td.tdbc');
     if (!td) return;
 
-    const flagImg = row?.querySelector('img[src*="/f"]');
+    const flagImg = Array.from(row.querySelectorAll('img')).find(img => {
+  const file = img.src.split('/').pop();
+  return flagColors.hasOwnProperty(file);
+});
     const color = flagColors[flagImg?.src.split('/').pop()] || '#444';
     colorRow(row, color);
 
