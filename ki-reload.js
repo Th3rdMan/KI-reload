@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      4.3.1
 // @description  Affiche les avatars améliorés des PJs avec couleurs de faction, bordures stylisées, infos profil (fonction + domiciliation) en ligne. PNJ exclus, performance optimisée. Version stable visuellement harmonieuse (v4.3.0). 🦝
-// @author       Racket Raccoon
+// @author       Th3rd
 // @match        http://www.kraland.org/*
 // @match        https://www.kraland.org/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=kraland.org
@@ -181,7 +181,7 @@ function handlePJAvatar(img, row, td) {
   const wrapper = createAvatarWrapper(img, color, link?.href);
   td.replaceChildren(wrapper);
 
-  // ✅ Ajout fond sur la cellule AVATAR
+  // Ajout fond sur la cellule AVATAR
   td.style.setProperty('background-color', `${color}4D`, 'important');
 
   colorRow(row, color); // garde la coloration des autres cellules
