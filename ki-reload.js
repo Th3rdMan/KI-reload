@@ -2,8 +2,8 @@
 // @name         Kraland - Avatars personnalisés
 // @namespace    http://tampermonkey.net/
 // @version      4.3.1
-// @description  Affiche les avatars améliorés des PJs avec couleurs de faction, bordures stylisées, infos profil (fonction + domiciliation) en ligne. PNJ exclus, performance optimisée. Version stable visuellement harmonieuse (v4.3.0). 🦝
-// @author       Th3rd
+// @description  Affiche les avatars améliorés des PJs avec couleurs de faction, bordures stylisées, infos profil (fonction + domiciliation) en ligne. Version stable visuellement harmonieuse (v4.4.0). 🦝
+// @author       Racket Raccoon / Th3rd
 // @match        http://www.kraland.org/*
 // @match        https://www.kraland.org/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=kraland.org
@@ -229,7 +229,6 @@ if (nameCell) {
     observer.observe(row);
   }
 }
-
 
 // Traitement des avatars pour les PNJs (mise en forme différente)
   function handlePNJAvatar(img, row) {
