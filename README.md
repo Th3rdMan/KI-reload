@@ -35,8 +35,8 @@
 ## 📸 Captures d’écran
 
 | Avant | Après |
-|:------:|:------:|
-| ![](./screenshots/before.png) | ![](./screenshots/after.png) |
+|:-----:|:-----:|
+| ![](https://i.ibb.co/Wp5RLVdg/image.png) | ![](https://i.ibb.co/KcQMYywC/image.png) |
 
 ---
 
