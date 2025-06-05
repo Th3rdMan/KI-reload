@@ -13,12 +13,10 @@
 
 ## ✨ Fonctionnalités principales
 
-- 🎨 **Avatars personnalisés**
+- 🎨 **Cadres de personnages**
   - Fond coloré selon la nation (transparence harmonieuse)
   - Bordure stylisée : ronde pour PJ, carrée pour PNJ
   - Redimensionnement uniforme (75×75px)
-- 👥 **Distinction PJ / PNJ**
-  - Cellules sobres pour PNJ, sans fond coloré
 - 🗂️ **Fonction et domiciliation** sous le nom
   - Affichage stylisé avec icônes inline
 - 🚨 **Surcouche "Wanted"**
