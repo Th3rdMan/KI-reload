@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/badge/version-4.4.0-blueviolet?style=flat-square)](https://github.com/Th3rD/KI-reload)
 [![Licence](https://img.shields.io/badge/Licence-MIT-green?style=flat-square)](./LICENSE)
-[![Installer avec Tampermonkey](https://img.shields.io/badge/Tampermonkey-Installer-orange?style=flat-square&logo=greasemonkey)](https://github.com/Th3rD/KI-reload/raw/main/ki-reload.js)
+[![Installer avec Tampermonkey](https://img.shields.io/badge/Tampermonkey-Installer-orange?style=flat-square&logo=greasemonkey)](https://github.com/Th3rdMan/KI-reload/blob/main/ki-reload.js)
 
 **KI-reload** est un script utilisateur pour [Tampermonkey](https://www.tampermonkey.net/) ou [Violentmonkey](https://violentmonkey.github.io/), conçu pour moderniser et améliorer l’interface du jeu **Kraland Interactif**.
 
@@ -44,4 +44,4 @@
    - [Tampermonkey (Chrome, Firefox)](https://www.tampermonkey.net/)
    - [Violentmonkey (Firefox, Libre)](https://violentmonkey.github.io/)
 2. Installe le script via ce lien :
-   - 👉 **[Installer KI-reload](https://github.com/Th3rD/KI-reload/raw/main/ki-reload.js)**
+   - 👉 **[Installer KI-reload](https://github.com/Th3rdMan/KI-reload/blob/main/ki-reload.js)**
