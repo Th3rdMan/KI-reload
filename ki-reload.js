@@ -273,11 +273,6 @@
         }
     }
 
-    // Met la première lettre d'une chaîne en majuscule
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
-
     // Récupère les infos "fonction" et "domiciliation" depuis la page de profil d’un personnage
     async function fetchFunctionFromProfile(persoId, row) {
         if (functionCache[persoId] !== undefined) {
