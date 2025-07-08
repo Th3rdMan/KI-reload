@@ -1,6 +1,6 @@
 # 🧠 KI-reload – Interface personnalisée pour Kraland Interactif
 
-[![Version](https://img.shields.io/badge/version-4.3.1-blueviolet?style=flat-square)](https://github.com/Th3rD/KI-reload)
+[![Version](https://img.shields.io/badge/version-4.3.1-blueviolet?style=flat-square)](https://github.com/Th3rdMan/KI-reload)
 [![Licence](https://img.shields.io/badge/Licence-MIT-green?style=flat-square)](./LICENSE)
 [![Installer avec Tampermonkey](https://img.shields.io/badge/Tampermonkey-Installer-orange?style=flat-square&logo=greasemonkey)](https://github.com/Th3rdMan/KI-reload/blob/main/ki-reload.js)
 
