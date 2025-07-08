@@ -339,16 +339,17 @@
         let groupCount = 0;
 
         rows.forEach(row => {
-            const groupHeader = row.querySelector('th a[href*="order.php"]');
-            const isSpecialGroup = row.querySelector('th a[href="order.php?p1=3004"]');
+            const hdr = row.querySelector('th a[href*="order.php"]');
+            const isSpecial = row.querySelector('th a[href="order.php?p1=3004"]');
+            if (!hdr || isSpecial) return;
 
-            if (groupHeader && !isSpecialGroup) {
-                groupCount++;
-                if (groupCount > 1) {
-                    const separator = document.createElement('tr');
-                    separator.innerHTML = '<td colspan="2">&nbsp;</td>';
-                    row.parentNode.insertBefore(separator, row);
-                }
+            groupCount++;
+            const next = row.nextElementSibling;
+
+            if (groupCount > 1 && next && next.querySelector('td')) {
+                const sep = document.createElement('tr');
+                sep.innerHTML = '<td colspan="2">&nbsp;</td>';
+                row.parentNode.insertBefore(sep, row);
             }
         });
     }
@@ -374,10 +375,9 @@
       border-left: none !important;
       border-right: none !important;
       border-top: none !important;
+       border-bottom: none !important;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
     }
     `;
     document.head.appendChild(style);
-
 })();
