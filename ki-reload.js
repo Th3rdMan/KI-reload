@@ -6,7 +6,7 @@
 // @author       Racket Raccoon / Th3rd
 // @match        http://www.kraland.org/*
 // @match        https://www.kraland.org/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=kraland.org
+// @icon         data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNlNjBmMGYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS1wYXctcHJpbnQtaWNvbiBsdWNpZGUtcGF3LXByaW50Ij48Y2lyY2xlIGN4PSIxMSIgY3k9IjQiIHI9IjIiLz48Y2lyY2xlIGN4PSIxOCIgY3k9IjgiIHI9IjIiLz48Y2lyY2xlIGN4PSIyMCIgY3k9IjE2IiByPSIyIi8+PHBhdGggZD0iTTkgMTBhNSA1IDAgMCAxIDUgNXYzLjVhMy41IDMuNSAwIDAgMS02Ljg0IDEuMDQ1UTYuNTIgMTcuNDggNC40NiAxNi44NEEzLjUgMy41IDAgMCAxIDUuNSAxMFoiLz48L3N2Zz4=
 // @run-at       document-start
 // ==/UserScript==
 
@@ -21,7 +21,7 @@
 
 // Couleurs associées à chaque drapeau de nation
   const flagColors = {
-    'f1.png': '#B22222', 'f2.png': '#8B5A2B', 'f3.png': '#DAA520', 'f4.png': '#001F3F',
+    'f1.png': '#B22222', 'f2.png': '#8B5A2B', 'f3.png': '#DAA520', 'f4.png': '#055cb5',
     'f5.png': '#025e19', 'f6.png': '#7A1C81', 'f7.png': '#262424', 'f8.png': '#008080', 'f9.png': '#556B2F'
   };
 
