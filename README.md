@@ -1,6 +1,9 @@
-# 🧠 KI-reload – Interface personnalisée pour Kraland Interactif
+# ⚠️ Projet Archivé ⚠️
+## 🧠 KI-reload – Interface personnalisée pour Kraland Interactif (V6)
 
-[![Version](https://img.shields.io/badge/version-4.4.0-blueviolet?style=flat-square)](https://github.com/Th3rdMan/KI-reload)
+![Status](https://img.shields.io/badge/Status-Archivé-red)
+![Maintenance](https://img.shields.io/badge/Maintenance-Non-lightgrey)
+[![Version](https://img.shields.io/badge/Version-4.4.0-blueviolet?style=flat-square)](https://github.com/Th3rdMan/KI-reload)
 [![Licence](https://img.shields.io/badge/Licence-MIT-green?style=flat-square)](./LICENSE)
 [![Installer avec Tampermonkey](https://img.shields.io/badge/Tampermonkey-Installer-orange?style=flat-square&logo=greasemonkey)](https://greasyfork.org/fr/scripts/542019-kraland-avatars-personnalis%C3%A9s)
 
